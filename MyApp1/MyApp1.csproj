@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{18C3DF74-B74E-4B6A-AD20-AB25E8627253}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyApp1</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>MyApp1</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFastDev>true</MtouchFastDev>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchDebug>true</MtouchDebug>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Json" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Views\RssFeedController.xib" />
+    <InterfaceDefinition Include="Views\RssFeedDetailController.xib" />
+    <InterfaceDefinition Include="Views\BarleyBreakController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="Controllers\AppViewController.cs" />
+    <Compile Include="Controllers\AppViewController.designer.cs">
+      <DependentUpon>AppViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApplicationsModel.cs" />
+    <Compile Include="Models\AppInfo.cs" />
+    <Compile Include="Proto\AppTableViewCell.cs" />
+    <Compile Include="Sources\AppTableViewSource.cs" />
+    <Compile Include="Models\RssFeedReader.cs" />
+    <Compile Include="Controllers\RssFeedController.cs" />
+    <Compile Include="Controllers\RssFeedController.designer.cs">
+      <DependentUpon>RssFeedController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\RssFeedTableViewSource.cs" />
+    <Compile Include="Proto\RssFeedTableViewCell.cs" />
+    <Compile Include="Models\RssFeedPost.cs" />
+    <Compile Include="Models\RssFeedModel.cs" />
+    <Compile Include="Models\DataModel.cs" />
+    <Compile Include="PublicDelegates.cs" />
+    <Compile Include="PublicExtens.cs" />
+    <Compile Include="Controllers\RssFeedDetailController.cs" />
+    <Compile Include="Controllers\RssFeedDetailController.designer.cs">
+      <DependentUpon>RssFeedDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrashFile.cs" />
+    <Compile Include="Controllers\BarleyBreakController.cs" />
+    <Compile Include="Controllers\BarleyBreakController.designer.cs">
+      <DependentUpon>BarleyBreakController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BarleyBreakGame.cs" />
+    <Compile Include="Models\BarleyBreakElem.cs" />
+    <Compile Include="Models\IDataModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Proto\" />
+    <Folder Include="Sources\" />
+    <Folder Include="Views\" />
+    <Folder Include="Resources\Images\Barley\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\JSON.txt" />
+    <BundleResource Include="Resources\Images\bgPattern1.png" />
+    <BundleResource Include="Resources\Images\bgPattern2.png" />
+    <BundleResource Include="Resources\Images\bgPattern3.png" />
+    <BundleResource Include="Resources\Images\bgPattern0.png" />
+    <BundleResource Include="Resources\Images\bgPattern4.png" />
+    <BundleResource Include="Resources\Images\newsHeaderIcon.png" />
+    <BundleResource Include="Resources\Images\arrowRight.png" />
+    <BundleResource Include="Resources\Images\appsHeaderImage.png" />
+    <BundleResource Include="Resources\Images\rbkNewsIcon.png" />
+    <BundleResource Include="Resources\Images\imageLoading.png" />
+    <BundleResource Include="Resources\Images\gamesHeaderImage.png" />
+    <BundleResource Include="Resources\Images\barleyBreakIcon.png" />
+    <BundleResource Include="Resources\Images\Barley\1.png" />
+    <BundleResource Include="Resources\Images\Barley\2.png" />
+    <BundleResource Include="Resources\Images\Barley\3.png" />
+    <BundleResource Include="Resources\Images\Barley\4.png" />
+    <BundleResource Include="Resources\Images\Barley\5.png" />
+    <BundleResource Include="Resources\Images\Barley\6.png" />
+    <BundleResource Include="Resources\Images\Barley\7.png" />
+    <BundleResource Include="Resources\Images\Barley\8.png" />
+    <BundleResource Include="Resources\Images\Barley\9.png" />
+    <BundleResource Include="Resources\Images\Barley\10.png" />
+    <BundleResource Include="Resources\Images\Barley\11.png" />
+    <BundleResource Include="Resources\Images\Barley\12.png" />
+    <BundleResource Include="Resources\Images\Barley\13.png" />
+    <BundleResource Include="Resources\Images\Barley\14.png" />
+    <BundleResource Include="Resources\Images\Barley\15.png" />
+    <BundleResource Include="Resources\Images\Barley\frameIcon.png" />
+    <BundleResource Include="Resources\Images\Barley\0.png" />
+    <BundleResource Include="Resources\Images\xamarinIcon.png" />
+  </ItemGroup>
+</Project>

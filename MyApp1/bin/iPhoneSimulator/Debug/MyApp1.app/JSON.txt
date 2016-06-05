@@ -1,0 +1,24 @@
+﻿{
+	"applications": [
+		{
+			"sectionName": "Applications",
+			"sectionContent": [
+				{
+					"appName": "RBK Ukraine News",
+					"appIcon": "rbkNewsIcon.png",
+					"appContr": "RssFeedController"
+				}
+			]
+		},
+		{
+			"sectionName": "Games",
+			"sectionContent": [
+				{
+					"appName": "Barley-Break",
+					"appIcon": "barleyBreakIcon.png",
+					"appContr": "BarleyBreakController"
+				}
+			]
+		}
+	]
+}
